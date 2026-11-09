@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AuditoriaSesionesRepository extends JpaRepository<AuditoriaSesiones, Long>
 {
-    
+
 }
