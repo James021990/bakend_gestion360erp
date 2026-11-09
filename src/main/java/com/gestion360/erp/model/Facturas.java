@@ -49,4 +49,9 @@ public class Facturas {
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuarios usuario;
+
+    @PrePersist
+    protected void prePersist() {
+        this.fecha_emision = LocalDateTime.now();
+    }
 }
