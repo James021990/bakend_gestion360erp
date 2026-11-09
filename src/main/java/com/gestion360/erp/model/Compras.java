@@ -34,4 +34,9 @@ public class Compras {
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuarios usuario;
+
+    @PrePersist
+    protected void prePersist() {
+        this.fecha_compra = LocalDateTime.now();
+    }
 }
