@@ -14,7 +14,7 @@ import lombok.*;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_rol;
+    private Long id_rol;
 
     @NotBlank(message = "El nombre es obligatorio")
     private String nombre_rol;
