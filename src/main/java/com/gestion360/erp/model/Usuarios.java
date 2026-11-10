@@ -43,4 +43,9 @@ public class Usuarios {
     @ManyToOne
     @JoinColumn(name = "id_rol")
     private Roles rol;
+
+    @PrePersist
+    protected void prePersist() {
+        this.fecha_creacion = LocalDateTime.now();
+    }
 }
