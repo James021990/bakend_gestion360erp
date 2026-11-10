@@ -46,7 +46,7 @@ public class CategoriasController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/{id)")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         return categoriasService.buscarPorId(id)
                 .map(categorias -> {
