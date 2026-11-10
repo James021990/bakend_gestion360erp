@@ -16,16 +16,19 @@ public class RolesServiceImpl implements IRolesService{
 
     @Override
     public List<Roles> listarTodos() {
+
         return rolesRepository.findAll();
     }
 
     @Override
     public Optional<Roles> buscarPorId(Long id) {
+
         return rolesRepository.findById(id);
     }
 
     @Override
     public Roles guardar(Roles rol) {
+
         return rolesRepository.save(rol);
     }
 
