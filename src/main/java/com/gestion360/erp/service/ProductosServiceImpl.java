@@ -16,16 +16,19 @@ public class ProductosServiceImpl implements IProductosService{
 
     @Override
     public List<Productos> listarTodos() {
+
         return productosRepository.findAll();
     }
 
     @Override
     public Optional<Productos> buscarPorId(Long id) {
+
         return productosRepository.findById(id);
     }
 
     @Override
     public Productos guardar(Productos producto) {
+
         return productosRepository.save(producto);
     }
 

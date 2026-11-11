@@ -8,10 +8,10 @@ import java.util.Optional;
 public interface IProveedoresService {
     List<Proveedores> listarTodos();
 
-    Optional<Proveedores> buscarPorId();
+    Optional<Proveedores> buscarPorId(Long id);
 
-    Proveedores guardat (Proveedores proveedor);
+    Proveedores guardar (Proveedores proveedor);
 
-    void borrar (Long id);
+    void eliminar (Long id);
 
 }
