@@ -25,12 +25,12 @@ public class Compras {
     @NotNull(message = "El campo Total Compra es obligatorio")
     private BigDecimal total_compra;
 
-    @NotBlank(message = "El campo id proveedor es obligatorio")
+    @NotNull(message = "El campo id proveedor es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_proveedor")
     private Proveedores proveedor;
 
-    @NotBlank(message = "El campo id usuario es obligatorio")
+    @NotNull(message = "El campo id usuario es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_usuario")
     private Usuarios usuario;
