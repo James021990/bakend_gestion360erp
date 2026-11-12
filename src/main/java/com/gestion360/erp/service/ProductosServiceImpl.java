@@ -34,6 +34,7 @@ public class ProductosServiceImpl implements IProductosService{
 
     @Override
     public void eliminar(Long id) {
+
         productosRepository.deleteById(id);
     }
 
