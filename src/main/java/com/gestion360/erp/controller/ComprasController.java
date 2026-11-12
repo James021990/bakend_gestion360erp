@@ -41,6 +41,7 @@ public class ComprasController {
                 .map(compraExistente ->{
                     compra.setId_compra(id);
                     Compras actualizada = comprasService.guardar(compra);
+                    return ResponseEntity.ok(actualizada);
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
