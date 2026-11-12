@@ -50,7 +50,7 @@ public class ComprasController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         return comprasService.buscarPorId(id)
                 .map(compra ->{
-                    comprasService.buscarPorId(id);
+                    comprasService.borrar(id);
                     return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
                 })
                 .orElseGet(() -> ResponseEntity.notFound().build());
