@@ -9,5 +9,5 @@ public interface IAuditoriaSesiones {
     List<AuditoriaSesiones> listartTodos();
     Optional<AuditoriaSesiones> buscarPorId(Long id);
     AuditoriaSesiones guardar(AuditoriaSesiones auditoriaSesiones);
-    void borrar(AuditoriaSesiones auditoriaSesiones);
+    void borrar(Long id);
 }
