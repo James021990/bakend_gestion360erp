@@ -9,5 +9,5 @@ public interface IConfiguracionEmpresa {
     List<ConfiguracionEmpresa> listarTodos();
     Optional<ConfiguracionEmpresa> buscarPorId(Long id);
     ConfiguracionEmpresa guardar(ConfiguracionEmpresa configuracionEmpresa);
-    void borrar(ConfiguracionEmpresa configuracionEmpresa);
+    void borrar(Long id);
 }
