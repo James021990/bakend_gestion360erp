@@ -36,7 +36,7 @@ public class AuditoriaSesionesController {
    }
 
    @PutMapping("/{id}")
-    public ResponseEntity<AuditoriaSesiones> uptade(@PathVariable Long id, @RequestBody AuditoriaSesiones auditoriaSesiones){
+    public ResponseEntity<AuditoriaSesiones> updade(@PathVariable Long id, @RequestBody AuditoriaSesiones auditoriaSesiones){
         return auditoriaSesion.buscarPorId(id)
                 .map(auditoriaSesionExistente ->{
                     auditoriaSesiones.setId_auditoria_sesiones(id);
