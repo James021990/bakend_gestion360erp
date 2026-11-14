@@ -15,7 +15,7 @@ public class AuditoriaSesionesServiceImpl implements IAuditoriaSesiones{
     AuditoriaSesionesRepository auditoriaSesionesRepository;
 
     @Override
-    public List<AuditoriaSesiones> listartTodos() {
+    public List<AuditoriaSesiones> listarTodos() {
         return auditoriaSesionesRepository.findAll();
     }
 
