@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface IMovimientoInventarioService {
     List<MovimientoInventario> listarTodos();
-    Optional<MovimientoInventario> buscarPorId(int id);
+    Optional<MovimientoInventario> buscarPorId(Long id);
     MovimientoInventario guardar(MovimientoInventario movimientoInventario);
     void borrar(Long id);
 }
