@@ -1,5 +1,6 @@
 package com.gestion360.erp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -40,14 +41,16 @@ public class Facturas {
     @NotBlank(message = "El campo estado de la factura es obligatorio")
     private String estado_factura;
 
-    @NotBlank(message = "El campo id_cliente es obligatorio")
+    @NotNull(message = "El campo id_cliente es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_cliente")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Clientes cliente;
 
-    @NotBlank(message = "El campo id_usuario es obligatorio")
+    @NotNull(message = "El campo id_usuario es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_usuario")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Usuarios usuario;
 
     @PrePersist

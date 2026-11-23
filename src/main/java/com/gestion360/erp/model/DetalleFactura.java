@@ -1,7 +1,7 @@
 package com.gestion360.erp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
@@ -28,13 +28,15 @@ public class DetalleFactura {
     @NotNull(message = "El campo subtotal lineal es obligatorio")
     private BigDecimal subtotal_lineal;
 
-    @NotBlank(message = "El campo id factura es obligatorio")
+    @NotNull(message = "El campo id factura es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_factura")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Facturas factura;
 
-    @NotBlank(message = "El campo id producto es obligatorio")
+    @NotNull(message = "El campo id producto es obligatorio")
     @ManyToOne
     @JoinColumn(name = "id_producto")
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private Productos producto;
 }
