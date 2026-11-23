@@ -37,8 +37,11 @@ public class UsuariosController {
     @PutMapping("/{id}")
     public ResponseEntity<Usuarios> update(@PathVariable Long id, @RequestBody Usuarios usuario) {
         return usuariosService.buscarPorId(id)
-                .map(usuarioExistente ->{
+                .map(usuarioExistente -> {
                     usuario.setId_usuario(id);
+                    if (usuario.getPassword_hash() == null || usuario.getPassword_hash().isBlank()) {
+                        usuario.setPassword_hash(usuarioExistente.getPassword_hash());
+                    }
                     Usuarios actualizado = usuariosService.guardar(usuario);
                     return ResponseEntity.ok(actualizado);
                 })
